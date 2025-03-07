@@ -20,7 +20,7 @@ This is it's fiirst game.
 More updates soon!
 
 ## Version histoy:-
-### Initial release 1.0
+### Initial release v.1.0
 Published the game
 
 ## You may also like:-

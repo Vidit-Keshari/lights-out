@@ -1,6 +1,6 @@
 # Vidit: lights-out
 ## Lights Out - Game
-This is an old-fashioned game which remixed by VGames with same functionality but ifferent theme!
+This is an old-fashioned game which remixed by VGames with same functionality but different theme!
 
 ## Lights Out - Game Rules
 Here are the rules of the game:-

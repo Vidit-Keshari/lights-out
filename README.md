@@ -28,6 +28,7 @@ Published the game
 > 2D-Minecraft - https://vidit-keshari.github.io/2d-Minecraft
 
 A VGames production
+
 ![VGames logo](https://github.com/user-attachments/assets/78de385e-f51f-4c4a-8f83-b54cbcd5990b)
 
 # END

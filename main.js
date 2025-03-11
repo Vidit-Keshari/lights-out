@@ -78,7 +78,7 @@ const CHARS = {
 const about = {
     series: "o", //old
     game: "g1", //game 1 lights out
-    version: "v.1.1" //version v.1.1
+    version: "v.2.0" //version v.2.0
 };
 
 //    Functions

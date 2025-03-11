@@ -20,6 +20,13 @@ This is it's fiirst game.
 More updates soon!
 
 ## Version histoy:-
+### Save system v.2.0
+- Added a new saving system where you can now save your progress.
+- Added counters for number of wins and losses.
+- Added player names.
+- Player names are saved locally.
+- Added string encoding and decoding systems for saving.
+
 ### Initial release v.1.0
 Published the game
 

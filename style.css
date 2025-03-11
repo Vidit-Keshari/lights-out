@@ -127,8 +127,8 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 5%;
-    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.2), 
-                inset -2px -2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.2),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.2);
     background: linear-gradient(135deg, #030c94, #040e3b);
     transition: background 0.2s ease-in-out;
 }
@@ -140,6 +140,10 @@ body {
 .on {
     background: linear-gradient(135deg, #039416, #043b0b);
     transition: background 0.2s ease-in-out;
+}
+
+label {
+    max-width: 85%;
 }
 
 label:not(#note) {
@@ -159,7 +163,11 @@ label:hover {
     transform: scale(1.05);
 }
 
-button#reset {
+label#encoded {
+    font-size: smaller;
+}
+
+button {
     font-size: 1.2em;
     font-weight: bold;
     color: #f0f8ff;
@@ -173,14 +181,19 @@ button#reset {
     transition: 0.3s, transform 0.2s;
 }
 
-button#reset:hover {
+button:hover {
     background: #004080;
     transform: scale(1.05);
+    color: #f0f8ff !important;
 }
 
-button#reset:active {
+button:active {
     background: #001f3f;
     transform: scale(0.95);
+}
+
+button:focus {
+    color: #f0f8ff !important;
 }
 
 #note {
@@ -272,12 +285,45 @@ h3#head:hover {
     transform: scale(1.05);
 }
 
+.form-control {
+    width: 250px;
+    padding: 10px;
+    border: 2px solid navy;
+    border-radius: 8px;
+    font-size: 16px;
+    color: navy;
+    background-color: #e6f0ff;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-control::placeholder {
+    color: #5a7bc2;
+    opacity: 0.8;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px #007bff;
+}
+
+#player {
+    display: inline-flex;
+    gap: 15px;
+}
+
+button#rename {
+    padding: 10px 10px;
+    height: fit-content;
+}
+
 /*    Animation Definitions   */
 @keyframes shootingStar {
     0% {
         transform: translate(-100, 0) rotate(-45deg);
         opacity: 1;
     }
+
     100% {
         transform: translate(300px, 150px) rotate(-45deg);
         opacity: 0;
@@ -285,6 +331,18 @@ h3#head:hover {
 }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 0% 100%; }
 }

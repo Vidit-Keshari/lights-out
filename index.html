@@ -28,11 +28,16 @@
                 <label id="note">-By Vidit Keshari from VGames</label>
             </div>
         </center>
-            <br><br>
-            <div id="main-body">
-                <center>
-                    <h3 id="head">Lights Out - Game</h3>
+        <br><br>
+        <div id="main-body">
+            <center>
+                <h3 id="head">Lights Out - Game</h3>
                 <div id="game-area">
+                    <div id="player">
+                        <input type="text" placeholder="player-name" id="player-name" class="form-control">
+                        <button onclick="rename();" class="btn" id="rename">&#9998;</button>
+                        <br><br><br>
+                    </div>
                     <div id="gamepad">
                         <div id="cells">
                             <div class="cell" data-x="0" data-y="0"></div>
@@ -50,7 +55,11 @@
                         <br><br>
                         <label>Status: <b id="status">Playing</b></label>
                         <br><br>
-                        <button onclick="reset();" id="reset">Reset</button>
+                        <label>Number of wins: <b id="wins">0</b></label>
+                        <br><br>
+                        <label>Number of losses: <b id="losses">0</b></label>
+                        <br><br>
+                        <button onclick="reset();" id="reset" class="btn">Reset</button>
                         <br><br>
                     </div>
                 </div>
@@ -67,18 +76,44 @@
                     <li>Plan your moves strategically to turn off all the cells!</li>
                     <li>Game resets automatically after 2 seconds if a win or lose is detected.</li>
                     <li>Clicks are disables on win or lose.</li>
+                    <li>The game save your name by default. For more saving features see below.</li>
                 </ul>
                 <p>Fun fact: I made this background in a different game and then started this project. This completed
                     before the other one so it came first.
                 </p>
             </div>
-            
+            <br><br>
+            <div id="save">
+                <center>
+                    <label id="encoded"></label>
+                    <br><br>
+                    <label>Click on the above binary code to copy it. Keep it safe so that next time when you come, you
+                        can continue from the progress you made. This does not include number of moves and position of
+                        on cells
+                    </label>
+                    <br><br>
+                    <input type="text" class="form-control" id="string" placeholder="Enter the binary code here">
+                    <button onclick="decode();" class="btn">Load</button>
+                    <br><br>
+
+                </center>
             </div>
+        </div>
         <div id="copyright-footer">
             <center>
                 <p>Lights out</p>
                 <p>By Vidit Keshari</p>
                 <p>A VGames Production</p>
+            </center>
+        </div>
+        <br><br>
+        <div id="about">
+            <center>
+                <label>A Game By Vidit Keshari</label>
+                <br><br>
+                <label>A VGames production</label>
+                <br><br>
+                <img src="VGames logo.png" alt="VGames logo" width="221px" height="287px">
             </center>
         </div>
         <br><br><br><br><br><br>

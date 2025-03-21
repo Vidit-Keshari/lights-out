@@ -78,7 +78,7 @@ const CHARS = {
 const about = {
     series: "o", //old
     game: "g1", //game 1 lights out
-    version: "v.2.0" //version v.2.0
+    version: "v.2.1" //version v.2.1
 };
 
 //    Functions
@@ -366,10 +366,26 @@ function decode() {
     let decoded_wins = 0;
     let decoded_losses = 0;
 
+    if (!encoded) {
+        window.alert("Please enter a binary string");
+        return;
+    }
+
     let parts = encoded.split(" ");
     console.log(parts);
+
+    if (parts.length !== 6) {
+        window.alert("Sorry, the binary string is invalid");
+        return;
+    }
+
     //    Checking if the string belongs to this game
-    if (parts[0] !== about.series || parts[1] !== about.game) {
+    if (parts[0] !== about.series) {
+        window.alert("The binary string does not belong to this series");
+        return;
+    }
+
+    if (parts[1] !== about.game) {
         window.alert("The binary string does not belong to this game");
         return;
     }
@@ -380,20 +396,26 @@ function decode() {
     }
 
     //    Decoding name
+    if (!parts[3].includes("n(") || !parts[3].includes(")")) {
+        window.alert("Sorry, the binary string is corrupted");
+    }
+
     let temp_decoded_name = parts[3].replace("n(", "").replace(")", "");
-    console.log(temp_decoded_name);
     let name_arr = temp_decoded_name.split(",");
     console.log(name_arr);
     for (let i = 0; i < name_arr.length; i++) {
         for (const [key, value] of Object.entries(CHARS)) {
             if (CHARS[key] === name_arr[i]) {
                 decoded_name += key;
-                console.log(name_arr[i], value);
             }
         }
     }
 
     //    Decoding wins
+    if (!parts[4].includes("w(") || !parts[4].includes(")")) {
+        window.alert("Sorry, the binary string is corrupted");
+    }
+
     let temp_decoded_wins = parts[4].replace("w(", "").replace(")", "");
     let wins_arr = temp_decoded_wins.split(",");
     for (let i = 0; i < wins_arr.length; i++) {
@@ -405,6 +427,10 @@ function decode() {
     }
 
     //    Decoding losses
+    if (!parts[5].includes("l(") || !parts[5].includes(")")) {
+        window.alert("Sorry, the binary string is corrupted");
+    }
+
     let temp_decoded_losses = parts[5].replace("l(", "").replace(")", "");
     let losses_arr = temp_decoded_losses.split(",");
     for (let i = 0; i < losses_arr.length; i++) {
@@ -421,7 +447,29 @@ function decode() {
         "losses": parseInt(decoded_losses)
     };
 
+    if (!decoded) {
+        window.alert("Sorry, the decoded data is invalid, please retry.");
+        return;
+    }
+
+    console.log(decoded);
     updateDecoded();
+}
+
+//    Save/Load
+function save() {
+    window.localStorage.setItem("o.g1.encoded_binary", encoded_binary);
+    window.alert("Saved!");
+}
+
+function load() {
+    let temp_encoded_binary = window.localStorage.getItem("o.g1.encoded_binary");
+    if (!temp_encoded_binary) {
+        window.alert("No saved data found");
+    } else {
+        document.getElementById("string").value = temp_encoded_binary;
+        decode();
+    }
 }
 
 //    devloper tools

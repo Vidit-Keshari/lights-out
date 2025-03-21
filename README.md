@@ -20,6 +20,10 @@ This is it's fiirst game.
 More updates soon!
 
 ## Version histoy:-
+### Better Save system v.2.1
+- Added a new saving system where you can save your progress in just 1 click.
+- Added a **Save** and **Load last** button
+
 ### Save system v.2.0
 - Added a new saving system where you can now save your progress.
 - Added counters for number of wins and losses.
@@ -30,10 +34,14 @@ More updates soon!
 ### Initial release v.1.0
 Published the game
 
-## You may also like:-
-> Dussehra game - https://vidit-keshari.github.io/dussehra-game
+More Updates soon!
 
-> 2D-Minecraft - https://vidit-keshari.github.io/2d-Minecraft
+## You may also like:-
+> Vidit: Dussehra game- https://vidit-keshari.github.io/dussehra-game/ (game) ~~~ https://github.com/vidit-keshari/dussehra-game/ (blog)
+>
+> Vidit: 2D-Minecraft- https://vidit-keshari.github.io/2d-Minecraft/ (game) ~~~ https://github.com/vidit-keshari/2d-minecraft/ (blog)
+>
+> Vidit: Old-Series: 2048- https://vidit-keshari.github.io/2048/ (game) ~~~ https://github.com/vidit-keshari/2048/ (blog)
 
 A VGames production
 

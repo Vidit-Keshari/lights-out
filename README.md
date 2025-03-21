@@ -15,9 +15,8 @@ Here are the rules of the game:-
 - Clicks are disables on win or lose.
 
 ## Old series
-I have started a new series named Old Series. I will be uploading games like this which were played by people earlier but a new style.
-This is it's fiirst game.
-More updates soon!
+I have started a new series named Old Series. I will be uploading games like this which were played by people earlier but in a new style.
+This is its first game.
 
 ## Version histoy:-
 ### Better Save system v.2.1

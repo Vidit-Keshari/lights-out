@@ -19,6 +19,21 @@ I have started a new series named Old Series. I will be uploading games like thi
 This is its first game.
 
 ## Version histoy:-
+### Improved styles v.2.2
+- Changed layout to match the layout of 2048
+- Changed the colors of sections for same reason
+- Added settings section
+- Added background music
+- Optimized moon as in the latest versions of Vidit: Old Series: 2048
+- Added a notes section. (which is not styled properly)
+
+> All the other games coming in Old series collection will follow this same style.
+>
+> If you are wodering why 2048 does not follow this game's style when this came earlier then for your information I started 2048 first and then this. 
+> But this finished earlier. So I uploaded it first.
+>
+> The newer version will bring more improved styles and responsivness for mobile users. Stay tuned!
+
 ### Better Save system v.2.1
 - Added a new saving system where you can save your progress in just 1 click.
 - Added a **Save** and **Load last** button

@@ -31,7 +31,7 @@
         <br><br>
         <div id="main-body">
             <center>
-                <h3 id="head">Lights Out - Game</h3>
+                <h2 id="head">Lights Out - Game</h2>
                 <div id="game-area">
                     <div id="player">
                         <input type="text" placeholder="player-name" id="player-name" class="form-control">
@@ -59,48 +59,80 @@
                         <br><br>
                         <label>Number of losses: <b id="losses">0</b></label>
                         <br><br>
+                    </div>
+                </div>
+                <div id="rules">
+                    <h2>Lights Out - Game Rules</h2>
+                    <ul>
+                        <li>The game board consists of a 3x3 grid of cells.</li>
+                        <li>Your goal is to turn off all the cells to win.</li>
+                        <li>Green cells are ON, and blue cells are OFF.</li>
+                        <li>Turning all cells ON results in a loss.</li>
+                        <li>Click on a cell to toggle its state.</li>
+                        <li>Clicking a cell also toggles its adjacent neighbors (above, below, left, and right).</li>
+                        <li>Plan your moves strategically to turn off all the cells!</li>
+                        <li>Game resets automatically after 2 seconds if a win or lose is detected.</li>
+                        <li>Clicks are disables on win or lose.</li>
+                        <li>The game save your name by default. For more saving features see below.</li>
+                    </ul>
+                    <h2>Notes</h2>
+                    <ul>
+                        <li>If you do not enter your name, your name will be set to guest automatically in the system.
+                            This does
+                            not rename you globally in the 'Old Series'. Your name will NOT be saved in the system.
+                        </li>
+                        <li>Saving the game and clearing the cache may delete the saved progress. For safety purposes,
+                            we
+                            recommend to keep a copy of the encoded binary code. The save button might not be liable in
+                            some
+                            cases.
+                        </li>
+                        <li>Your player name is connected 'Vidit: Old Series: All games' player name. Renaming yourself
+                            in one
+                            game of 'Old Series' renames you in the whole 'Old Series'.
+                        </li>
+                        <li>I made this background in a different game and then started this project. This
+                            completed
+                            before the other one so it came first.
+                        </li>
+                    </ul>
+                </div>
+            </center>
+            <br><br>
+            <center>
+                <div id="settings">
+                    <h2>Settings:- </h2>
+                    <br><br>
+                    <div id="music-settings">
+                        <button onclick="toggleMusic();">Music: <b id="playing">Playing: Indian walk - Nico
+                                Staf</b></button>
+                    </div>
+                    <br><br>
+                    <div id="restart-settings">
                         <button onclick="reset();" id="reset" class="btn">Reset</button>
+                    </div>
+                    <br><br>
+                    <div id="save-settings">
+                        <button onclick="save();">Save</button>
+                        <br><br>
+                        <button onclick="load();">Load last saved</button>
+                        <br><br>
+                        <label id="encoded"></label>
+                        <br><br>
+                        <label>Click on the above binary code to copy it. Keep it safe so that next time when you come,
+                            you
+                            can continue from the progress you made. This does not include number of moves and position
+                            of
+                            on cells
+                        </label>
+                        <br><br>
+                        <input type="text" class="form-control" id="string" placeholder="Enter the binary code here">
+                        <br>
+                        <button onclick="decode();" class="btn">Load</button>
                         <br><br>
                     </div>
                 </div>
             </center>
-            <div id="rules">
-                <h3>Lights Out - Game Rules</h3>
-                <ul>
-                    <li>The game board consists of a 3x3 grid of cells.</li>
-                    <li>Your goal is to turn off all the cells to win.</li>
-                    <li>Green cells are ON, and blue cells are OFF.</li>
-                    <li>Turning all cells ON results in a loss.</li>
-                    <li>Click on a cell to toggle its state.</li>
-                    <li>Clicking a cell also toggles its adjacent neighbors (above, below, left, and right).</li>
-                    <li>Plan your moves strategically to turn off all the cells!</li>
-                    <li>Game resets automatically after 2 seconds if a win or lose is detected.</li>
-                    <li>Clicks are disables on win or lose.</li>
-                    <li>The game save your name by default. For more saving features see below.</li>
-                </ul>
-                <p>Fun fact: I made this background in a different game and then started this project. This completed
-                    before the other one so it came first.
-                </p>
-            </div>
-            <br><br>
-            <div id="save">
-                <center>
-                    <label id="encoded"></label>
-                    <br><br>
-                    <label>Click on the above binary code to copy it. Keep it safe so that next time when you come, you
-                        can continue from the progress you made. This does not include number of moves and position of
-                        on cells
-                    </label>
-                    <br><br>
-                    <input type="text" class="form-control" id="string" placeholder="Enter the binary code here">
-                    <button onclick="decode();" class="btn">Load</button>
-                    <br><br>
-                    <button onclick="save();">Save</button>
-                    <br><br>
-                    <button onclick="load();">Load last saved</button>
-                    <br><br>
-                </center>
-            </div>
         </div>
         <div id="copyright-footer">
             <center>
@@ -121,6 +153,10 @@
         </div>
         <br><br><br><br><br><br>
     </div>
+    <audio id="background-music" loop autoplay>
+        <source src="Indian Walk - Nico Staf.mp3" type="audio/mp3">
+        Your browser does not support Music.
+    </audio>
 </body>
 
 </html>

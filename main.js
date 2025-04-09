@@ -4,6 +4,7 @@ var moves = 0;
 var wins = 0;
 var losses = 0;
 var player = "";
+var playing = true;
 var encoded_binary = "";
 var decoded = {};
 
@@ -78,7 +79,7 @@ const CHARS = {
 const about = {
     series: "o", //old
     game: "g1", //game 1 lights out
-    version: "v.2.1" //version v.2.1
+    version: "v.2.2" //version
 };
 
 //    Functions
@@ -151,13 +152,23 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    document.addEventListener("scroll", () => {
-        let scroll_pos = window.scrollY;
-        const moon = document.querySelector("#moon");
-        var new_pos = (((scroll_pos * 0.9) - scroll_pos) + 185);
+    const moon = document.querySelector("#moon");
+    let latestScrollY = 0;
+    let ticking = false;
 
-        if (moon) {
-            moon.style.top = `${new_pos}px`;
+    function updateMoonPosition() {
+        const moonOffset = (-0.1 * latestScrollY);
+        moon.style.transform = `translateY(${moonOffset}px)`;
+        ticking = false;
+    }
+
+    updateMoonPosition();
+
+    window.addEventListener("scroll", () => {
+        latestScrollY = window.scrollY;
+        if (!ticking) {
+            window.requestAnimationFrame(updateMoonPosition);
+            ticking = true;
         }
     });
 });
@@ -200,6 +211,14 @@ document.addEventListener("DOMContentLoaded", () => {
         navigator.clipboard.writeText(encoded_binary);
         window.alert("Copied to clipboard");
     });
+
+    const music = document.getElementById("background-music");
+    music.volume = 0.1;
+
+    setTimeout(() => {
+        music.play();
+        playing = true;
+    }, 5000);
 });
 //   Mechanics
 
@@ -470,6 +489,22 @@ function load() {
         document.getElementById("string").value = temp_encoded_binary;
         decode();
     }
+}
+
+//    Music
+function toggleMusic() {
+    const music = document.getElementById("background-music");
+    const musicDisplay = document.getElementById("playing");
+    if (playing) {
+        music.pause();
+        playing = false;
+        musicDisplay.innerHTML = "Mute";
+    } else if (!playing) {
+        music.play();
+        playing = true;
+        musicDisplay.innerHTML = "Playing: Indian walk - Nico Staf";
+    }
+    music.volume = 0.1;
 }
 
 //    devloper tools

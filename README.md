@@ -23,6 +23,10 @@ This is its first game.
 - Tweaked and made some minor changes in the encoder and decoder
 - Now they work same as 2048
 
+> Older save codes don't work now and are not detected either.
+>
+> You need to do your whole progress again.
+
 ### Improved styles v.2.2
 - Changed layout to match the layout of 2048
 - Changed the colors of sections for same reason

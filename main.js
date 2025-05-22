@@ -79,7 +79,7 @@ const CHARS = {
 const about = {
     series: "o", //old
     game: "g1", //game 1 lights out
-    version: "v.2.2" //version
+    version: "v.2.3" //version
 };
 
 //    Functions
@@ -347,7 +347,7 @@ function encodeName(name) {
     for (let i = 0; i < name.length; i++) {
         encoded += CHARS[name[i]] + " ";
     }
-    encoded = "n(" + encoded.trim().split(" ").join(",") + ")";
+    encoded = encoded.trim().split(" ").join(",");
     return encoded;
 }
 
@@ -357,7 +357,7 @@ function encodeWins() {
     for (let i = 0; i < wins_str.length; i++) {
         encoded += CHARS[wins_str[i]] + " ";
     }
-    encoded = "w(" + encoded.trim().split(" ").join(",") + ")";
+    encoded = encoded.trim().split(" ").join(",");
     return encoded;
 }
 
@@ -367,7 +367,7 @@ function encodeLosses() {
     for (let i = 0; i < losses_str.length; i++) {
         encoded += CHARS[losses_str[i]] + " ";
     }
-    encoded = "l(" + encoded.trim().split(" ").join(",") + ")";
+    encoded = encoded.trim().split(" ").join(",");
     return encoded;
 }
 
@@ -415,12 +415,7 @@ function decode() {
     }
 
     //    Decoding name
-    if (!parts[3].includes("n(") || !parts[3].includes(")")) {
-        window.alert("Sorry, the binary string is corrupted");
-    }
-
-    let temp_decoded_name = parts[3].replace("n(", "").replace(")", "");
-    let name_arr = temp_decoded_name.split(",");
+    let name_arr = parts[3].split(",");
     console.log(name_arr);
     for (let i = 0; i < name_arr.length; i++) {
         for (const [key, value] of Object.entries(CHARS)) {
@@ -431,12 +426,7 @@ function decode() {
     }
 
     //    Decoding wins
-    if (!parts[4].includes("w(") || !parts[4].includes(")")) {
-        window.alert("Sorry, the binary string is corrupted");
-    }
-
-    let temp_decoded_wins = parts[4].replace("w(", "").replace(")", "");
-    let wins_arr = temp_decoded_wins.split(",");
+    let wins_arr = parts[4].split(",");
     for (let i = 0; i < wins_arr.length; i++) {
         for (const [key, value] of Object.entries(CHARS)) {
             if (CHARS[key] === wins_arr[i]) {
@@ -446,12 +436,7 @@ function decode() {
     }
 
     //    Decoding losses
-    if (!parts[5].includes("l(") || !parts[5].includes(")")) {
-        window.alert("Sorry, the binary string is corrupted");
-    }
-
-    let temp_decoded_losses = parts[5].replace("l(", "").replace(")", "");
-    let losses_arr = temp_decoded_losses.split(",");
+    let losses_arr = parts[5].split(",");
     for (let i = 0; i < losses_arr.length; i++) {
         for (const [key, value] of Object.entries(CHARS)) {
             if (CHARS[key] === losses_arr[i]) {
@@ -472,6 +457,7 @@ function decode() {
     }
 
     console.log(decoded);
+    encode();
     updateDecoded();
 }
 
@@ -505,6 +491,24 @@ function toggleMusic() {
         musicDisplay.innerHTML = "Playing: Indian walk - Nico Staf";
     }
     music.volume = 0.1;
+}
+
+
+//    Quote
+function randomQuote() {
+    const quotes = [
+        "Keep Gaming!", //0
+        "Play. Complete. Conquer!", //1
+        "Gaming Improved!", //2
+        "Unleash the Gamer Within!", //3
+        "Where Fun Never Ends!", //4
+        "Victory on the Door!", //5
+        "Play beyond limits!", //6
+        "-By Vidit Keshari from VGames" //7
+    ];
+    const element = document.getElementById("quote");
+    var idx = Math.floor(Math.random() * quotes.length);
+    element.innerText = quotes[idx];
 }
 
 //    devloper tools

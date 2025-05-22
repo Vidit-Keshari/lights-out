@@ -19,6 +19,10 @@ I have started a new series named Old Series. I will be uploading games like thi
 This is its first game.
 
 ## Version histoy:-
+### Better Encoding/Decoding system v.2.3
+- Tweaked and made some minor changes in the encoder and decoder
+- Now they work same as 2048
+
 ### Improved styles v.2.2
 - Changed layout to match the layout of 2048
 - Changed the colors of sections for same reason

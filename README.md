@@ -12,7 +12,7 @@ Here are the rules of the game:-
 - Clicking a cell also toggles its adjacent neighbors (above, below, left, and right).
 - Plan your moves strategically to turn off all the cells!
 - Game resets automatically after 2 seconds if a win or lose is detected.
-- Clicks are disables on win or lose.
+- Clicks are disabled on win or lose for sometime.
 
 ## Old series
 I have started a new series named Old Series. I will be uploading games like this which were played by people earlier but in a new style.
@@ -25,7 +25,7 @@ This is its first game.
 
 > Older save codes don't work now and are not detected either.
 >
-> You need to do your whole progress again.
+> You need to do your whole progress again. (I doubt anyone has even played this game)
 
 ### Improved styles v.2.2
 - Changed layout to match the layout of 2048
@@ -37,7 +37,7 @@ This is its first game.
 
 > All the other games coming in Old series collection will follow this same style.
 >
-> If you are wodering why 2048 does not follow this game's style when this came earlier then for your information I started 2048 first and then this. 
+> If you are wondering why 2048 does not follow this game's style when this came earlier then for your information I started 2048 first and then this. 
 > But this finished earlier. So I uploaded it first.
 >
 > The newer version will bring more improved styles and responsivness for mobile users. Stay tuned!
